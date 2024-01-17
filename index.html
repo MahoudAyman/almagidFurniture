@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="صورة2.jpg">
     <meta name="description" content="شركة الماجد لنقل الأثاث واحدةً من أكثر الشركات نجاحاً ونموّاً في مجال نقل العفش والأثاث">
     <meta name="keywords" content="الامجد, المحمود لنقل العفش, نقل عفش">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -82,7 +83,9 @@
     <div id="er"><h2>كيف يتم <span>النقل</h2></span></div>
     <div id="rr" class="ml"><h2>كيف يتم <span>النقل</h2></span>  <li id="ri" class="ml" ><a id="ma" href="tel:01029046651">اتصل بنا</a></li>
     </div>
+
      <button id="scrollTopBtn" onclick="scrollToTop()"><h1>^</h1></button>    <!-- زر الاسكرول  -->
+     
      <div id="ab" class="abl">
        <div id="abm" class="abh"><img src="655.jpg">
         <h2><h1>معاينة <span class="gh">الاغراض</span></h1>
@@ -198,12 +201,11 @@
     height: 100vh;
     border-radius: 7px;
     margin: 0px 0px 50px 55%;
-    position: absolute;
+    position: fixed; /* تغيير من absolute إلى fixed */
     z-index: 99999999999999999999999;
     transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
     opacity: 0;
 }
-
 #container p {
     padding: 4%;
     border-radius: 9px;
@@ -398,7 +400,7 @@ header ul li a:hover, .active {
 
 #open:hover {
     background: #49e60bea;
-    color: rgba(3, 8, 12, 0.616);
+    color: rgb(3, 8, 12);
     cursor: pointer;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
     font-size: 20px;
@@ -410,7 +412,7 @@ header ul li a:hover, .active {
     background-color: #23c50eb2;
     border: none;
     border-radius: 5px;
-    position: absolute;
+    position: fixed;
     left: 30.4%;
     width: 8.5%;
     font-size: 22px;
@@ -433,11 +435,13 @@ header ul li a:hover, .active {
 #container {
   opacity: 0;
   margin: 0px 0px 50px 55%;
-  background-color: #fffffff5;
+  background-color: #ffffff;
   color: #10001f;
-  position: absolute;
+  position: fixed;
   z-index: 99999999999999999999999;
   transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+border-radius: 15px 0px 0px 2px;
+box-shadow: 0 0 6px rgba(0, 0, 0, 0.295);
 }
 
 #vr li {
@@ -517,10 +521,10 @@ header ul li a:hover, .active {
 .bl {
   color: #10001f;
   display: inline-block;
-  margin: 9px;
   border-radius: 0px;
   padding: 40px;
-  padding-left: 60px;
+  margin-top: 7px;
+ padding-left:80px ;
 }
 
 .be {
@@ -529,10 +533,11 @@ header ul li a:hover, .active {
   border-radius: 11px;
   position: absolute;
   width: 90px;
-  margin: -43px 9px 9px 9px;
-  padding: 5px;
-  margin-right: 10px;
-  padding-left: -20px;
+  margin: -43px 0px 0px 9px;
+  margin-left: 100px;
+  padding: 7px;
+  
+
   text-align: center;
   transition: 0.5s ease;
   transition: box-shadow background-color 0.3s ease;
@@ -564,6 +569,9 @@ header ul li a:hover, .active {
 #dr {
   float: right;
   margin: 0 auto;
+     position: absolute;
+     right: 0;
+    transform: translate(-50%);
 }
 
 #yu h1 {
@@ -887,8 +895,11 @@ box-shadow: 0 0 15px rgba(63, 116, 72, 0.623);
 }
 
 
-#abl{
-position: absolute;
+#abl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .abh{
@@ -982,7 +993,8 @@ padding: 6px;
 /*  */
 
 #abls {
-  position: absolute;
+    position: absolute;
+  
 }
 
 .abhs {
@@ -1753,24 +1765,6 @@ if (window.innerWidth < 910) {
     rp.style.display = "none";
 }else{
   rp.style.display = "block";
-}
-
-
-
-
-
-
-var openButton = document.getElementById('open');
-
-openButton.addEventListener('click', function() {
-    scrollToTop();
-});
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 }
 
 
